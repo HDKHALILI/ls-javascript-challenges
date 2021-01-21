@@ -1,9 +1,9 @@
 class Triangle {
   static isValidTriangle(sides) {
     const [sideA, sideB, sideC] = sides;
-    const isLengthValid = sides.every(side => side > 0);
+    const areLengthsValid = sides.every(side => side > 0);
     return (
-      isLengthValid &&
+      areLengthsValid &&
       sideA + sideB >= sideC &&
       sideA + sideC >= sideB &&
       sideB + sideC >= sideA
