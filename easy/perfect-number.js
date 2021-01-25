@@ -1,9 +1,7 @@
 class PerfectNumber {
-  constructor() {}
-
   static classify(number) {
-    if (number < 0) {
-      throw new Error("Negative numbers is not allowed");
+    if (number < 1) {
+      throw new Error("Number must be greater than or equal to 1");
     }
 
     let aliquotSum = PerfectNumber.getAliquoteSum(number);
