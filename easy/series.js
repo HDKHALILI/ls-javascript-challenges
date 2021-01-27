@@ -3,19 +3,20 @@ class Series {
     this.numberString = string ? string : "";
   }
 
+  static toDigits(numberString) {
+    return numberString.split("").map(digit => Number(digit));
+  }
+
   slices(length) {
     if (length > this.numberString.length) {
       throw new Error("Length must be equal to less than the length of string");
     }
 
-    const digits = this.numberString.split("").map(digit => Number(digit));
+    const digits = Series.toDigits(this.numberString);
     const cominations = [];
 
-    for (let start = 0; start < digits.length; start += 1) {
-      const end = start + length;
-      if (end <= digits.length) {
-        cominations.push(digits.slice(start, end));
-      }
+    for (let start = 0; start <= digits.length - length; start += 1) {
+      cominations.push(digits.slice(start, start + length));
     }
 
     return cominations;
