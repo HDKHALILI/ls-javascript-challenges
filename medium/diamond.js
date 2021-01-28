@@ -48,10 +48,6 @@ class Diamond {
     return `${this.getPadding(padding)}${letter}${this.getPadding(padding)}\n`;
   }
 
-  static middleRow(letter, spaces) {
-    return `${letter}${this.getPadding(spaces)}${letter}\n`;
-  }
-
   static getPadding(length) {
     return " ".repeat(length);
   }
