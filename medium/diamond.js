@@ -22,9 +22,10 @@ class Diamond {
       spaces += index === 0 ? 1 : 2;
     }
 
+    const middleRow = this.getRow(letter, padding, spaces);
     const bottomRows = [...topRows].reverse();
 
-    return [...topRows, this.middleRow(letter, spaces), ...bottomRows].join("");
+    return [...topRows, middleRow, ...bottomRows].join("");
   }
 
   static getRow(letter, padding, spaces) {
