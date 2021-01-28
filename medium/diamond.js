@@ -32,10 +32,10 @@ class Diamond {
       return this.firstRow(letter, padding);
     }
 
-    return this.defaultRows(letter, padding, spaces);
+    return this.defaultRow(letter, padding, spaces);
   }
 
-  static defaultRows(letter, padding, spaces) {
+  static defaultRow(letter, padding, spaces) {
     const left = `${this.getPadding(padding)}${letter}`;
     const right = `${letter}${this.getPadding(padding)}`;
     const middle = this.getPadding(spaces);
